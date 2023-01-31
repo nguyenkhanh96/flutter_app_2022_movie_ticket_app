@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/Category_bar.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/header.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/search_bar.dart';
 
@@ -15,8 +16,9 @@ class HomePage extends StatelessWidget {
             //header
             HomeHeader(size: size),
             //search bar
-            SearchBar(size: size)
+            SearchBar(size: size),
             //category bar
+            CategoryBar(size: size),
           ],
         ),
       ),
