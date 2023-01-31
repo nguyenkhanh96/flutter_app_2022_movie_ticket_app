@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_2022_movie_ticket_app/src/config/app_color.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/header.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/search_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,8 +12,11 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            //header
             HomeHeader(size: size),
             //search bar
+            SearchBar(size: size)
+            //category bar
           ],
         ),
       ),
