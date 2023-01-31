@@ -13,19 +13,19 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 64, left: 24, right: 24),
+      padding: const EdgeInsets.only(top: 64, left: 24, right: 24),
       child: SizedBox(
         height: size.height / 10,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               'Find Your Best\nMovie',
               style: TxtStyle.heading1SemiBold,
             ),
             CircleAvatar(
               radius: size.height / 24,
-              backgroundImage: AssetImage(AssetPath.iconProfile),
+              backgroundImage: const AssetImage(AssetPath.iconProfile),
             )
           ],
         ),
