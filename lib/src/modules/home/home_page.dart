@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/config/app_color.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/config/text_style.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/category_bar.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/header.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/search_bar.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/slider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,14 +16,33 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //header
             HomeHeader(size: size),
             //search bar
-            SearchBar(size: size)
+            SearchBar(size: size),
             //category bar
+            CategoryBar(size: size),
+            //title
+            buildTitle("Now Playing"),
+            //slider
+            SliderBar(size: size)
           ],
         ),
+      ),
+    );
+  }
+
+  Padding buildTitle(String content) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 24,
+        vertical: 24,
+      ),
+      child: Text(
+        content,
+        style: TxtStyle.heading2,
       ),
     );
   }
