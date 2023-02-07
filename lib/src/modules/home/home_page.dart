@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_2022_movie_ticket_app/src/config/app_color.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/config/text_style.dart';
-import 'package:flutter_app_2022_movie_ticket_app/src/model/movie.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/category_bar.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/coming_soon.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/components/header.dart';
