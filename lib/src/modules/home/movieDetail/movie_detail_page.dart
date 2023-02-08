@@ -28,6 +28,7 @@ class MovieDetailPage extends StatelessWidget {
             ),
             const ArrowBack(),
             Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 24, top: size.height / 4.5),
@@ -41,34 +42,54 @@ class MovieDetailPage extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                          child: Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(left: 8, bottom: 8),
-                            width: size.width,
-                            child: const Text(
-                              "Ralph Break the Internet",
-                              style: TxtStyle.heading3Medium,
+                        child: Column(
+                          children: [
+                            Container(
+                              padding:
+                                  const EdgeInsets.only(left: 8, bottom: 8),
+                              width: size.width,
+                              child: const Text(
+                                "Ralph Break the Internet",
+                                style: TxtStyle.heading3Medium,
+                              ),
                             ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(left: 8, bottom: 8),
-                            child: Row(
-                              children: const [
-                                StartComponent(),
-                                StartComponent(),
-                                StartComponent(),
-                                StartComponent(),
-                                StartComponent(),
-                                Text(
-                                  "(5.0)",
-                                  style: TxtStyle.heading4,
-                                )
-                              ],
+                            Container(
+                              margin: const EdgeInsets.only(left: 8, bottom: 8),
+                              child: Row(
+                                children: const [
+                                  StartComponent(),
+                                  StartComponent(),
+                                  StartComponent(),
+                                  StartComponent(),
+                                  StartComponent(),
+                                  Text(
+                                    "(5.0)",
+                                    style: TxtStyle.heading4,
+                                  )
+                                ],
+                              ),
                             ),
-                          )
-                        ],
-                      ))
+                            Container(
+                              padding:
+                                  const EdgeInsets.only(left: 8, bottom: 8),
+                              width: size.width,
+                              child: const Text(
+                                "Action & adventure, Comedy",
+                                style: TxtStyle.heading4Light,
+                              ),
+                            ),
+                            Container(
+                              padding:
+                                  const EdgeInsets.only(left: 8, bottom: 8),
+                              width: size.width,
+                              child: const Text(
+                                "1h41min",
+                                style: TxtStyle.heading4Light,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
