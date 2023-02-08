@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/config/app_color.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/config/text_style.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/constants/app_constants.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/constants/asset_path.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/movieDetail/components/arrow_back.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/movieDetail/components/background_widget.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/widget/star.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class MovieDetailPage extends StatelessWidget {
+class MovieDetailPage extends StatefulWidget {
   const MovieDetailPage({super.key});
+
+  @override
+  State<MovieDetailPage> createState() => _MovieDetailPageState();
+}
+
+class _MovieDetailPageState extends State<MovieDetailPage>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,11 +108,74 @@ class MovieDetailPage extends StatelessWidget {
                       )
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: size.height - 120,
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(top: 16),
+                        alignment: Alignment.center,
+                        width: size.width,
+                        child: TabBar(
+                          tabs: const [
+                            Tab(
+                              text: "About Movie",
+                            ),
+                            Tab(
+                              text: "Review",
+                            ),
+                          ],
+                          controller: _tabController,
+                          indicatorSize: TabBarIndicatorSize.label,
+                          labelStyle: TxtStyle.heading3,
+                          unselectedLabelStyle: TxtStyle.heading3,
+                          indicatorColor: DarkTheme.white,
+                        ),
+                      ),
+                      Expanded(
+                        child: TabBarView(
+                          controller: _tabController,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                buildTitle("Synopsis"),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 24),
+                                  child: Text(
+                                    AppConstant.exampleContent,
+                                    style: TxtStyle.heading4Light,
+                                  ),
+                                ),
+                                buildTitle("Cast & Crew"),
+                                buildTitle("Trailer and song")
+                              ],
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              child: const Text("Review Page"),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
-            )
+            ),
           ],
         ),
+      ),
+    );
+  }
+
+  Padding buildTitle(String content) {
+    return Padding(
+      padding: const EdgeInsets.all(24),
+      child: Text(
+        content,
+        style: TxtStyle.heading2,
       ),
     );
   }
