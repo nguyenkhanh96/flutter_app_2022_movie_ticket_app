@@ -3,8 +3,12 @@ import 'package:flutter_app_2022_movie_ticket_app/src/config/app_color.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/config/text_style.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/constants/app_constants.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/constants/asset_path.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/model/cast.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/model/movie.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/movieDetail/components/arrow_back.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/movieDetail/components/background_widget.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/movieDetail/components/cast_bar.dart';
+import 'package:flutter_app_2022_movie_ticket_app/src/modules/home/movieDetail/components/trailer_bar.dart';
 import 'package:flutter_app_2022_movie_ticket_app/src/widget/star.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -149,7 +153,9 @@ class _MovieDetailPageState extends State<MovieDetailPage>
                                   ),
                                 ),
                                 buildTitle("Cast & Crew"),
-                                buildTitle("Trailer and song")
+                                CastBar(size: size),
+                                buildTitle("Trailer and song"),
+                                const TrailerBar()
                               ],
                             ),
                             Container(
